@@ -1,5 +1,9 @@
-package com.aluracursos.foroapi.domain.topico;
+package com.aluracursos.foroapi.domain.topico.clases;
 
+import com.aluracursos.foroapi.domain.topico.dto.DatosActualizarTopico;
+import com.aluracursos.foroapi.domain.topico.dto.DatosRegistroTopico;
+import com.aluracursos.foroapi.domain.topico.enumeraciones.Curso;
+import com.aluracursos.foroapi.domain.topico.enumeraciones.Estado;
 import jakarta.persistence.*;
 import lombok.*;
 
