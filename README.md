@@ -19,8 +19,8 @@ El proyecto consiste en una api rest que permite un crud de tópicos de un foro.
 Antes de proceder, asegurate de tener estos programas en el equipo:
 
 * ☕ **JDK 21**
-* 🖥️ **IntelliJ IDEA (Puede usar cualquier IDE de Java o editor de programación)
-* 🌐 **Conexión a Internet** (Para obtener los datos de los libros y autores en tiempo real)
+* 🖥️ **IntelliJ IDEA** (Puede usar cualquier IDE de Java o editor de programación)
+* 🌐 **Insomnia** (Para obtener los datos de los tópicos)
 
 ### 2.3. **Herramientas** 🛠️
 
@@ -56,11 +56,14 @@ Para ejecutar el proyecto es necesario seguir estos pasos:
 * Asegúrate de que todas las configuraciones estén correctas.
 
 * Ejecuta el proyecto desde tu IDE.
+* Ejecuta el programa **Insomnia**.
 
 
 ## 3. 🔄 **Funcionamiento**
 
 La aplicación solicita la creacion de endpoints. Utiliza el programa **Insomnia** para obtener los datos del topico, la aplicación brinda resultados precisos y rápidos.
+
+En el programa **Insomnia** recuerde en la pestaña **Body** que la informacion se envia en formato JSON.
 
 ## 4. **Licencia** 📝
 
