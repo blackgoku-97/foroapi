@@ -55,6 +55,7 @@ Para ejecutar el proyecto es necesario seguir estos pasos:
 * DB_USER: Nombre de usuario de la base de datos.
 * DB_PASSWORD: Contraseña de la base de datos.
 * JWT_SECRET: Clave secreta para la autenticación y autorización.
+* JWT_EXPIRATION: Tiempo de expiración del token.
 
 2. Verifica la configuración y ejecuta el proyecto:
 

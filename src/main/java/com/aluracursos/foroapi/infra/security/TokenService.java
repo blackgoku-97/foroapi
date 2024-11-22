@@ -16,6 +16,9 @@ import java.time.ZoneOffset;
 @Service
 public class TokenService {
 
+    @Value("${api.security.expiration}")
+    private Integer apiExpiration;
+
     @Value("${api.security.secret}")
     private String apiSecret;
 
@@ -49,14 +52,14 @@ public class TokenService {
             }
             return subject;
         } catch (JWTVerificationException exception) {
-            throw new RuntimeException("Invalid token", exception);
+            throw new RuntimeException("Token invalido", exception);
         }
     }
 
 
 
     private Instant generarFechaExpiracion() {
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
+        return LocalDateTime.now().plusHours(apiExpiration).toInstant(ZoneOffset.of("-03:00"));
     }
 
 }
