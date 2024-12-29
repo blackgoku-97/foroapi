@@ -1,12 +1,12 @@
-# **Proyecto de Foro** 📘
+# **Proyecto de Foro** 
 
-## 1. **Introducción** 📖
+## 1. **Introducción**
 
 El proyecto consiste en una api rest que permite un crud de tópicos de un foro y un token por seguridad a los tópicos.
 
-## 2. **Requisitos** 📉
+## 2. **Requisitos**
 
-### 2.1. **Requisitos funcionales** 📈
+### 2.1. **Requisitos funcionales**
 
 * El sistema debe permitir la busqueda de todos los topicos por metodo GET.
 * El sistema debe permitir la creacion de nuevos topicos por metodo POST.
@@ -15,15 +15,15 @@ El proyecto consiste en una api rest que permite un crud de tópicos de un foro 
 * El sistema debe permitir la busqueda de topicos por id por metodo GET.
 * El sistema debe permitir la creacion del token por usuario usando el metodo POST.
 
-### 2.2. **Requisitos Previos** ⚙️
+### 2.2. **Requisitos Previos** ⚙
 
 Antes de proceder, asegurate de tener estos programas en el equipo:
 
-* ☕ **JDK 21**
-* 🖥️ **IntelliJ IDEA** (Puede usar cualquier IDE de Java o editor de programación)
-* 🌐 **Insomnia** (Para obtener los datos de los tópicos)
+* **JDK 21**
+* **IntelliJ IDEA** (Puede usar cualquier IDE de Java o editor de programación)
+* **Insomnia** (Para obtener los datos de los tópicos)
 
-### 2.3. **Herramientas** 🛠️
+### 2.3. **Herramientas** 
 
 * Java: Lenguaje de programación utilizado para el desarrollo.
 * Spring Boot: Framework de Java para el desarrollo.
@@ -66,15 +66,17 @@ Para ejecutar el proyecto es necesario seguir estos pasos:
 * Ejecuta el proyecto desde tu IDE.
 * Ejecuta el programa **Insomnia**.
 
-## 3. 🔄 **Funcionamiento**
+## 3. **Funcionamiento**
 
 * La aplicación solicita la creacion de endpoints. Utiliza el programa **Insomnia** para obtener los datos del topico y login del usuario, la aplicación brinda resultados precisos y rápidos.
 
 * Recuerde que en el programa **Insomnia** en la pestaña **Body** que la informacion se envia en formato JSON.
 * Recuerde que en el programa **Insomnia** en la pestaña **Auth** debe elegir la opcion **Bearer Token** poner el token creado en los endpoints de los tópicos para tener autorización.
 * Recuerde que el token expira en 2 horas, hay que renovarlo constantemente.
+* Recuerde importar en la tabla usuarios un usuario para adquirir el token.
+* Recuerde que en el programa **Insomnia** debe importar el archivo de insomnia para tener los endpoints del proyecto.
 
 
-## 4. **Licencia** 📝
+## 4. **Licencia**
 
 Este proyecto está licenciado bajo los términos de la [MIT License](LICENSE).
