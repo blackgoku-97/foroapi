@@ -43,7 +43,7 @@ Antes de proceder, asegurate de tener estos programas en el equipo:
 * Intellij IDEA: IDE de programación.
 * Insomnia: API REST de prueba.
 
-### 2.4. **Función de la Aplicación** 🚀
+### 2.4. **Función de la Aplicación**
 
 Para ejecutar el proyecto es necesario seguir estos pasos:
 
