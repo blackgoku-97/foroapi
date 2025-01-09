@@ -6,6 +6,7 @@ import com.aluracursos.foroapi.domain.topico.dto.DatosDetalleTopico;
 import com.aluracursos.foroapi.domain.topico.dto.DatosListadoTopico;
 import com.aluracursos.foroapi.domain.topico.dto.DatosRegistroTopico;
 import com.aluracursos.foroapi.domain.topico.repository.TopicoRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -21,6 +22,7 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/topicos")
+@SecurityRequirement(name = "bearer-key")
 public class TopicoController {
 
     @Autowired
@@ -30,7 +32,7 @@ public class TopicoController {
     private PagedResourcesAssembler<DatosListadoTopico> assembler;
 
     @GetMapping
-    public ResponseEntity<PagedModel<EntityModel<DatosListadoTopico>>> listadoTopicos(@PageableDefault(size = 3) Pageable paginacion) {
+    public ResponseEntity<PagedModel<EntityModel<DatosListadoTopico>>> listadoTopicos(@PageableDefault(size = 1) Pageable paginacion) {
         Page<DatosListadoTopico> topicosPage = topicoRepository.findAll(paginacion).map(DatosListadoTopico::new);
         PagedModel<EntityModel<DatosListadoTopico>> pagedModel = assembler.toModel(topicosPage);
         return ResponseEntity.ok(pagedModel);

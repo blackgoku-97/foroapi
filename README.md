@@ -1,4 +1,4 @@
-# **Proyecto de Foro** 
+# **Proyecto de Foro**
 
 ## 1. **Introducción**
 
@@ -23,9 +23,10 @@ Antes de proceder, asegurate de tener estos programas en el equipo:
 * **IntelliJ IDEA** (Puede usar cualquier IDE de Java o editor de programación)
 * **Insomnia** (Para obtener los datos de los tópicos)
 
-### 2.3. **Herramientas** 
+### 2.3. **Herramientas**
 
 * Java: Lenguaje de programación utilizado para el desarrollo.
+* Spring Doc: Dependencia de Spring para la documentación.
 * Spring Boot: Framework de Java para el desarrollo.
 * Spring Hateoas: Dependencia de Spring para la integración con APIs REST.
 * Spring Security: Dependencia de Spring para la seguridad.
@@ -61,21 +62,45 @@ Para ejecutar el proyecto es necesario seguir estos pasos:
 
 * Asegúrate de que todas las configuraciones estén correctas.
 
-* La dependencia  de Auth0-jwt esta aca: https://github.com/auth0/java-jwt
+* La dependencia de Auth0-jwt esta aca: https://github.com/auth0/java-jwt
+* La dependencia de Spring Doc esta aca: https://springdoc.org/
 
 * Ejecuta el proyecto desde tu IDE.
 * Ejecuta el programa **Insomnia**.
 
 ## 3. **Funcionamiento**
 
-* La aplicación solicita la creacion de endpoints. Utiliza el programa **Insomnia** para obtener los datos del topico y login del usuario, la aplicación brinda resultados precisos y rápidos.
+* La aplicación solicita la creacion de endpoints. Utiliza el programa **Insomnia** para obtener los datos del topico y
+  login del usuario, la aplicación brinda resultados precisos y rápidos.
 
 * Recuerde que en el programa **Insomnia** en la pestaña **Body** que la informacion se envia en formato JSON.
-* Recuerde que en el programa **Insomnia** en la pestaña **Auth** debe elegir la opcion **Bearer Token** poner el token creado en los endpoints de los tópicos para tener autorización.
+* Recuerde que en el programa **Insomnia** en la pestaña **Auth** debe elegir la opcion **Bearer Token** poner el token
+  creado en los endpoints de los tópicos para tener autorización.
 * Recuerde que el token expira en 2 horas, hay que renovarlo constantemente.
 * Recuerde importar en la tabla usuarios un usuario para adquirir el token.
 * Recuerde que en el programa **Insomnia** debe importar el archivo de insomnia para tener los endpoints del proyecto.
+* Recuerde entrar a esta url: http://localhost:8080/swagger-ui/index.html para ver la interfaz de swagger.
+* Recuerde en swagger para obtener todos los topicos borrar el body y pegar esto:
 
+{
+"paginacion": {
+"type": "object",
+"properties": {
+"page": {
+"type": "integer"
+},
+"size": {
+"type": "integer"
+},
+"sort": {
+"type": "array",
+"items": {
+"type": "string"
+}
+}
+}
+}
+}
 
 ## 4. **Licencia**
 
