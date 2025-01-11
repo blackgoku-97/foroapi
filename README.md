@@ -89,7 +89,7 @@ Para ejecutar el proyecto es necesario seguir estos pasos:
 * Recuerde que el token expira en 2 horas, hay que renovarlo constantemente-
 * Recuerde que en el programa **Insomnia** debe importar el archivo de insomnia para tener los endpoints del proyecto.
 * Recuerde entrar a esta url: http://localhost:8080/swagger-ui/index.html para ver la interfaz de swagger.
-* Recuerde en swagger para obtener todos los topicos y usuarios debe borrar el body y pegar esto:
+* Recuerde en swagger para obtener todos los topicos y usuarios debe borrar el body y pegar esto en su respectivo endpoint.:
 
 {
 "paginacion": {
