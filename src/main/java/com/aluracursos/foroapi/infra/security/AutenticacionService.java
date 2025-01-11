@@ -2,9 +2,7 @@ package com.aluracursos.foroapi.infra.security;
 
 import com.aluracursos.foroapi.domain.usuario.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,7 +1,6 @@
 package com.aluracursos.foroapi.domain.topico.dto;
 
-import com.aluracursos.foroapi.domain.topico.enumeraciones.Curso;
-import com.aluracursos.foroapi.domain.topico.enumeraciones.Estado;
+import com.aluracursos.foroapi.domain.topico.enumeraciones.*;
 import com.aluracursos.foroapi.domain.topico.clases.Topico;
 
 import java.time.LocalDateTime;

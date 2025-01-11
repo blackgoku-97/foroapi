@@ -1,18 +1,13 @@
 package com.aluracursos.foroapi.controller;
 
 import com.aluracursos.foroapi.domain.topico.clases.Topico;
-import com.aluracursos.foroapi.domain.topico.dto.DatosActualizarTopico;
-import com.aluracursos.foroapi.domain.topico.dto.DatosDetalleTopico;
-import com.aluracursos.foroapi.domain.topico.dto.DatosListadoTopico;
-import com.aluracursos.foroapi.domain.topico.dto.DatosRegistroTopico;
+import com.aluracursos.foroapi.domain.topico.dto.*;
 import com.aluracursos.foroapi.domain.topico.repository.TopicoRepository;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
-import org.springframework.data.web.PagedResourcesAssembler;
+import org.springframework.data.domain.*;
+import org.springframework.data.web.*;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.PagedModel;
 import org.springframework.http.ResponseEntity;
