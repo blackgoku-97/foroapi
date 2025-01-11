@@ -80,6 +80,8 @@ Para ejecutar el proyecto es necesario seguir estos pasos:
 * Recuerde importar en la tabla usuarios un usuario para adquirir el token.
 * Recuerde que en el programa **Insomnia** debe importar el archivo de insomnia para tener los endpoints del proyecto.
 * Recuerde entrar a esta url: http://localhost:8080/swagger-ui/index.html para ver la interfaz de swagger.
+* Recuerde encriptar la clave de la base de datos antes de insertarla. Dejare la url para encriptar la clave: https://bcrypt-generator.com/
+  la clave a encriptar es: 123456
 * Recuerde en swagger para obtener todos los topicos borrar el body y pegar esto:
 
 {
