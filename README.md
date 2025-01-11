@@ -14,6 +14,7 @@ El proyecto consiste en una api rest que permite un crud de tópicos y un crud d
   * El sistema debe permitir la actualizacion de usuarios por metodo PUT.
   * El sistema debe permitir la eliminacion de usuarios por metodo DELETE.
   * El sistema debe permitir la busqueda de usuarios por id por metodo GET.
+  * El sistema debe permitir la creacion de un token con el usuario creado por metodo POST.
 
 * Topicos:
 
@@ -22,7 +23,6 @@ El proyecto consiste en una api rest que permite un crud de tópicos y un crud d
   * El sistema debe permitir la actualizacion de topicos por metodo PUT.
   * El sistema debe permitir la eliminacion de topicos por metodo DELETE.
   * El sistema debe permitir la busqueda de topicos por id por metodo GET.
-  * El sistema debe permitir la creacion del token por usuario usando el metodo POST.
 
 ### 2.2. **Requisitos Previos**
 
