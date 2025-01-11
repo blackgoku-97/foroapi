@@ -23,10 +23,15 @@ public class SecurityConfigurations {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-        return httpSecurity.csrf(csrf -> csrf.disable())
+        return httpSecurity.csrf(CsrfConfigurer::disable)
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests((authorizeHttpRequests) ->
                         authorizeHttpRequests
+                                .requestMatchers(HttpMethod.GET, "/usuarios").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/usuarios/{id}").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/usuarios").permitAll()
+                                .requestMatchers(HttpMethod.PUT, "/usuarios/{id}").permitAll()
+                                .requestMatchers(HttpMethod.DELETE, "/usuarios/{id}").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/login").permitAll()
                                 .requestMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()
                                 .anyRequest()

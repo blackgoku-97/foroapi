@@ -2,26 +2,35 @@
 
 ## 1. **Introducción**
 
-El proyecto consiste en una api rest que permite un crud de tópicos de un foro y un token por seguridad a los tópicos.
+El proyecto consiste en una api rest que permite un crud de tópicos y un crud de usuarios, con el usuario obtener un token para la seguridad de los tópicos.
 
 ## 2. **Requisitos**
 
 ### 2.1. **Requisitos funcionales**
+* Usuarios:
 
-* El sistema debe permitir la busqueda de todos los topicos por metodo GET.
-* El sistema debe permitir la creacion de nuevos topicos por metodo POST.
-* El sistema debe permitir la actualizacion de topicos por metodo PUT.
-* El sistema debe permitir la eliminacion de topicos por metodo DELETE.
-* El sistema debe permitir la busqueda de topicos por id por metodo GET.
-* El sistema debe permitir la creacion del token por usuario usando el metodo POST.
+  * El sistema debe permitir la busqueda de todos los usuarios por metodo GET.
+  * El sistema debe permitir la creacion de nuevos usuarios por metodo POST.
+  * El sistema debe permitir la actualizacion de usuarios por metodo PUT.
+  * El sistema debe permitir la eliminacion de usuarios por metodo DELETE.
+  * El sistema debe permitir la busqueda de usuarios por id por metodo GET.
 
-### 2.2. **Requisitos Previos** ⚙
+* Topicos:
+
+  * El sistema debe permitir la busqueda de todos los topicos por metodo GET.
+  * El sistema debe permitir la creacion de nuevos topicos por metodo POST.
+  * El sistema debe permitir la actualizacion de topicos por metodo PUT.
+  * El sistema debe permitir la eliminacion de topicos por metodo DELETE.
+  * El sistema debe permitir la busqueda de topicos por id por metodo GET.
+  * El sistema debe permitir la creacion del token por usuario usando el metodo POST.
+
+### 2.2. **Requisitos Previos**
 
 Antes de proceder, asegurate de tener estos programas en el equipo:
 
 * **JDK 21**
 * **IntelliJ IDEA** (Puede usar cualquier IDE de Java o editor de programación)
-* **Insomnia** (Para obtener los datos de los tópicos)
+* **Insomnia** (Para obtener los datos de los endpoints del proyecto)
 
 ### 2.3. **Herramientas**
 
@@ -65,24 +74,22 @@ Para ejecutar el proyecto es necesario seguir estos pasos:
 * La dependencia de Auth0-jwt esta aca: https://github.com/auth0/java-jwt
 * La dependencia de Spring Doc esta aca: https://springdoc.org/
 
-* Ejecuta el proyecto desde tu IDE.
+* Para importar los endpoints de insomnia, debe abrir insomnia y importar el archivo de insomnia que se encuentra en la carpeta **foroapi**.
+  en import -> seleccionar el archivo.
+
 * Ejecuta el programa **Insomnia**.
+* Ejecuta el proyecto desde tu IDE.
 
 ## 3. **Funcionamiento**
 
-* La aplicación solicita la creacion de endpoints. Utiliza el programa **Insomnia** para obtener los datos del topico y
-  login del usuario, la aplicación brinda resultados precisos y rápidos.
-
+* La aplicación solicita la creacion de endpoints. Utiliza el programa **Insomnia** para obtener los datos de los tópicos y usuarios, la aplicación brinda resultados precisos y rápidos
 * Recuerde que en el programa **Insomnia** en la pestaña **Body** que la informacion se envia en formato JSON.
 * Recuerde que en el programa **Insomnia** en la pestaña **Auth** debe elegir la opcion **Bearer Token** poner el token
   creado en los endpoints de los tópicos para tener autorización.
-* Recuerde que el token expira en 2 horas, hay que renovarlo constantemente.
-* Recuerde importar en la tabla usuarios un usuario para adquirir el token.
+* Recuerde que el token expira en 2 horas, hay que renovarlo constantemente-
 * Recuerde que en el programa **Insomnia** debe importar el archivo de insomnia para tener los endpoints del proyecto.
 * Recuerde entrar a esta url: http://localhost:8080/swagger-ui/index.html para ver la interfaz de swagger.
-* Recuerde encriptar la clave de la base de datos antes de insertarla. Dejare la url para encriptar la clave: https://bcrypt-generator.com/
-  la clave a encriptar es: 123456
-* Recuerde en swagger para obtener todos los topicos borrar el body y pegar esto:
+* Recuerde en swagger para obtener todos los topicos y usuarios debe borrar el body y pegar esto:
 
 {
 "paginacion": {
