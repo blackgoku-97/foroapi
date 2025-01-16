@@ -9,7 +9,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.*;
 
 @Table(name = "usuarios")
-@Entity(name = "Usuario")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

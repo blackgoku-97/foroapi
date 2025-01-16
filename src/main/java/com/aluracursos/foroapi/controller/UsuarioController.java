@@ -4,7 +4,6 @@ import com.aluracursos.foroapi.domain.usuario.clases.Usuario;
 import com.aluracursos.foroapi.domain.usuario.dto.*;
 import com.aluracursos.foroapi.domain.usuario.repository.UsuarioRepository;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.data.web.*;
 import org.springframework.hateoas.EntityModel;
@@ -17,13 +16,16 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+    private final UsuarioRepository usuarioRepository;
 
-    @Autowired
-    private PagedResourcesAssembler<DatosListadoUsuario> assembler;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private final PagedResourcesAssembler<DatosListadoUsuario> assembler;
+    private final PasswordEncoder passwordEncoder;
+
+    public UsuarioController(PasswordEncoder passwordEncoder, UsuarioRepository usuarioRepository, PagedResourcesAssembler<DatosListadoUsuario> assembler) {
+        this.passwordEncoder = passwordEncoder;
+        this.usuarioRepository = usuarioRepository;
+        this.assembler = assembler;
+    }
 
     @GetMapping
     public ResponseEntity<PagedModel<EntityModel<DatosListadoUsuario>>> listadoUsuarios(@PageableDefault(size = 1) Pageable paginacion) {
@@ -49,7 +51,7 @@ public class UsuarioController {
 
     @PutMapping("/{id}")
     public ResponseEntity<String> actualizarUsuario(@PathVariable Long id, @Valid @RequestBody DatosActualizarUsuario datosActualizarUsuario) {
-        Usuario usuario = usuarioRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuario no encontradp"));
+        Usuario usuario = usuarioRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
         // Verificar si ya existe un usuario con el mismo login (excluyendo el usuario actual)
         if (usuarioRepository.existsByLogin(datosActualizarUsuario.login())) {

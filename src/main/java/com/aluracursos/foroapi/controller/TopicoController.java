@@ -5,7 +5,6 @@ import com.aluracursos.foroapi.domain.topico.dto.*;
 import com.aluracursos.foroapi.domain.topico.repository.TopicoRepository;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.data.web.*;
 import org.springframework.hateoas.EntityModel;
@@ -20,11 +19,14 @@ import java.time.LocalDateTime;
 @SecurityRequirement(name = "bearer-key")
 public class TopicoController {
 
-    @Autowired
-    private TopicoRepository topicoRepository;
+    private final TopicoRepository topicoRepository;
 
-    @Autowired
-    private PagedResourcesAssembler<DatosListadoTopico> assembler;
+    private final PagedResourcesAssembler<DatosListadoTopico> assembler;
+
+    public TopicoController(PagedResourcesAssembler<DatosListadoTopico> assembler, TopicoRepository topicoRepository) {
+        this.assembler = assembler;
+        this.topicoRepository = topicoRepository;
+    }
 
     @GetMapping
     public ResponseEntity<PagedModel<EntityModel<DatosListadoTopico>>> listadoTopicos(@PageableDefault(size = 1) Pageable paginacion) {
@@ -54,7 +56,7 @@ public class TopicoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<String> actualizarTopico(@PathVariable Long id, @Valid @RequestBody DatosActualizarTopico datosActualizarTopico) {
-        Topico topico = topicoRepository.findById(id).orElseThrow(() -> new RuntimeException("Topico no encontradp"));
+        Topico topico = topicoRepository.findById(id).orElseThrow(() -> new RuntimeException("Topico no encontrado"));
 
         // Verificar si ya existe un tópico con el mismo título y mensaje (excluyendo el tópico actual)
         if (topicoRepository.existsByTituloAndMensaje(datosActualizarTopico.titulo(), datosActualizarTopico.mensaje())) {

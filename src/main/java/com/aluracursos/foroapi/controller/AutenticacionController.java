@@ -4,7 +4,6 @@ import com.aluracursos.foroapi.domain.usuario.clases.Usuario;
 import com.aluracursos.foroapi.domain.usuario.dto.DatosAutenticacionUsuario;
 import com.aluracursos.foroapi.infra.security.*;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
@@ -14,11 +13,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/login")
 public class AutenticacionController {
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
 
-    @Autowired
-    private TokenService tokenService;
+    private final TokenService tokenService;
+
+    public AutenticacionController(AuthenticationManager authenticationManager, TokenService tokenService) {
+        this.authenticationManager = authenticationManager;
+        this.tokenService = tokenService;
+    }
 
     @PostMapping
     public ResponseEntity<UsernamePasswordAuthenticationToken> autenticarUsuario(@RequestBody @Valid DatosAutenticacionUsuario datosAutenticacionUsuario) {
